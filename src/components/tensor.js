@@ -6,21 +6,18 @@ export default function Tensor(){
     const [model, setModel]= useState(null);
     const [imagenInput, setImagenInput]=useState(null)
     const [prediccion, setPrediccion]=useState(null)
-    console.log("2")
+   
     useEffect(()=>{
-        async function cargarModelo(){
-            console.log("Carga el modelo")
-            const modelo= await tf.loadLayersModel("model.json")
-            console.log("MODELO?", modelo)
+        async function cargarModelo(){   
+            const modelo= await tf.loadLayersModel("https://llane4.github.io/Clasificador-gatos-y-perros/model.json")           
             setModel(modelo)
         }
-        
         cargarModelo()
-        console.log("1")
+      
     }, [])
 
     const handleImageUpload = async (event) => {
-        console.log(event.target.files[0])
+       
         if(!event.target.files[0])return
         // Obtiene la imagen cargada
         const file = event.target.files[0];
@@ -39,13 +36,13 @@ export default function Tensor(){
         const predictedClase = clases[prediccionData[0] > 0.5 ? 1 : 0];
 
         // Mostrar la predicción
-        console.log('Prediction:', predictedClase);
+    
         setPrediccion(predictedClase)
         
     };
 
     const cargarImagen=async(file)=>{
-        console.log("4")
+      
         const image = new Image();
         const reader = new FileReader();
 
@@ -70,7 +67,7 @@ export default function Tensor(){
         // Se define el ancho y la altura que acepta el modelo para las imagenes
         const width = 64;
         const height = 64;
-        console.log("5")
+     
         // Creamos un canvas para poder modificar la imagen
         const canvas = document.createElement('canvas');
         canvas.width = width;
