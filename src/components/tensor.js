@@ -10,6 +10,7 @@ export default function Tensor(){
     useEffect(()=>{
         async function cargarModelo(){
             const modelo= await tf.loadLayersModel("model.json")
+            
             setModel(modelo)
         }
         cargarModelo()
