@@ -2,7 +2,7 @@
   "name": "gatos",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://llane4.github.io/Clasificador-gatos-y-perros/",
+  "homepage": "http://llane4.github.io/Clasificador-gatos-y-perros/",
   "dependencies": {
     "@tensorflow/tfjs": "^4.7.0",
     "@testing-library/jest-dom": "^5.16.5",
