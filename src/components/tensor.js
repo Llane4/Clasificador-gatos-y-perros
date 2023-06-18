@@ -13,7 +13,7 @@ export default function Tensor(){
             console.log("MODELO?", modelo)
             setModel(modelo)
         }
-        console.log("MODELO?", modelo)
+        
         cargarModelo()
         console.log("1")
     }, [])
